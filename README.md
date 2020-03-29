@@ -31,6 +31,7 @@ npm run ssr        // 运行SSR模式【包含 npm run ssr-build   和  npm run 
 #### 本地SSR调试模式
 ```
 // 本地SSR 开发模式【增加webpack --watch】 和 nodemon 启动SSR服务
+npm run ssr-build    // 生成前端dist目录
 npm run ssr-server-debug    // 生成SSR服务代码 --watch 模式
 npm run ssr-start-debug     // nodemon 启动SSR服务
 ```
