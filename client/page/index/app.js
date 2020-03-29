@@ -4,10 +4,12 @@ import ReactDOM from 'react-dom'
 import ClassA from './components/classA'
 import ClassB from './components/classB'
 import axios from 'axios'
-import { Provider } from 'mobx-react';
-import stores from './store/index';
 import { inject, observer } from 'mobx-react';
 import img from './img/123.jpg'
+
+
+
+
 @inject('$store') @observer
 export default class App extends React.Component {
     static asyncDate() {

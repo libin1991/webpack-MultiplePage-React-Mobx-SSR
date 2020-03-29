@@ -1,20 +1,15 @@
 const path = require('path')
 const fs = require('fs')
 const glob = require('glob')
-const srcRoot = path.resolve(__dirname, '../client/src')
-const serverRoot = path.resolve(__dirname, '../server/src')
-const pageDir = path.resolve(srcRoot, 'page')
+const srcRoot = path.resolve(__dirname, '../client')
+const serverRoot = path.resolve(__dirname, '../server')
+const pageDir = path.resolve(srcRoot, './page')
 const outputPath = path.resolve(__dirname, '../dist')
 const config = require('../config');
 
 const mainFile = 'index.js'
 const mainHtml = 'index.html'
 
-
-// const proVariablePath = path.resolve(__dirname, '../.pro')
-// const devVariablePath = path.resolve(__dirname, '../.dev')
-
-//
 
 function readFileContentToEnvObj(pathStr) {
     let obj = {}
@@ -51,28 +46,7 @@ function readFileContent(pathStr) {
 
 
 
-// 获取page下的所有入口文件
-// function getEntry() {
-//     let entryMap = {}
-//     // E:\Users\Adminator\Desktop\react-waimai\src\page\index\index.js
-//     fs.readdirSync(pageDir).forEach(function (pathName) {
-//         // pathName=index
-//         // fullPathName=\src\page\index
-//         const fullPathName = path.resolve(pageDir, pathName)
 
-//         let stat = fs.statSync(fullPathName)
-//         // fileName=\src\page\index\index.js
-//         let fileName = path.resolve(fullPathName, mainFile)
-
-//         if (stat.isDirectory() && fs.existsSync(fileName)) {
-//             entryMap[pathName] = fileName
-//         }
-//     })
-
-//     return entryMap
-// }
-
-// const entry = getEntry()
 
 const devObj = config.dev;   // readFileContentToEnvObj(devVariablePath)
 const proObj = config.pro;   // readFileContentToEnvObj(proVariablePath)

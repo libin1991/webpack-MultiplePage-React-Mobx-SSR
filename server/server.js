@@ -11,7 +11,7 @@ import compression from 'compression';
 
 const port = process.env.PORT || 8888;
 
-import SSR_entry from '../client/src/page/ssr.entry'
+import SSR_entry from '../client/page/ssr.entry'
 
 function readFileContent(pathStr) {
   pathStr = path.resolve(process.cwd(), pathStr)
@@ -36,6 +36,7 @@ app.use(compression());
 app.use('/js', express.static(path.join(__dirname, '../dist/js')));
 app.use('/css', express.static(path.join(__dirname, '../dist/css')));
 app.use('/images', express.static(path.join(__dirname, '../dist/images')));
+app.use('/json', express.static(path.join(__dirname, '../dist/json')));
 
 app.get('*.html', async (req, res) => {
   let { url } = req;

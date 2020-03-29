@@ -10,7 +10,7 @@ const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
 
 module.exports = {
     entry: {
-        server: path.resolve(serverRoot, '../server.js')
+        server: path.resolve(serverRoot, './server.js')
     },
     output: {
         path: path.resolve(outputPath, './server/'),

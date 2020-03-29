@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.config.dev.js",
     "ssr-server-debug": "webpack --config ./build/webpack.server.js --watch",
+    "ssr-start-debug": "nodemon ./dist/server/server.js",
     "ssr-build": "webpack --config ./build/webpack.config.build.js",
     "ssr-server": "webpack --config ./build/webpack.server.js",
     "ssr-start": "node ./dist/server/server.js",

@@ -11,7 +11,9 @@ const baseConfig = {
     resolve: {
         extensions: ['.js', '.jsx'],
         alias: {
-            '@': path.resolve(__dirname, '../client/src')
+            '@': path.resolve(__dirname, '../client'),
+            '@component': path.resolve(__dirname, '../client/component'),
+            '@json': path.resolve(__dirname, '../client/json')
         }
     },
     module: {
@@ -26,7 +28,7 @@ const baseConfig = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        esModule:false,
+                        esModule: false,
                         name: '[name].[hash].[ext]',
                         outputPath: 'images/',
                         limit: 10240
@@ -37,8 +39,8 @@ const baseConfig = {
     },
     plugins: [
         new CopyPlugin([{
-            from: path.resolve(srcRoot, './static'),
-            to: path.resolve(outputPath, './static'),
+            from: path.resolve(srcRoot, './json'),
+            to: path.resolve(outputPath, './json'),
             force: true
         }])
     ]

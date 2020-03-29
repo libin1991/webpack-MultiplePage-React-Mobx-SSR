@@ -9,6 +9,10 @@ import { Provider } from 'mobx-react';
 import App from './app';
 import stores from './store/index';
 
+
+import '@/public/css/reset.css'
+import '@/public/js/htmlFontSize.js'
+
 if (window.__INITIAL_STATE__) {
     stores.replace(window.__INITIAL_STATE__)
 }
