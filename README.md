@@ -1,7 +1,7 @@
 # 简介
-网上能用好用的脚手架一大堆，我又为什么要重复的做这个东西呢？
+网上能用好用的SSR脚手架一大堆，我又为什么要重复的做这个东西呢？
 
-**支持`多页面`**，网上大多使用react-router实现，不符合多页面SSR的需求。
+**支持多页面，网上大多使用react-router实现，不符合多页面SSR的需求。**
 
 首先，我认为一个自己经常使用的东西，自己是有必要去了解的，是可以随心所欲的为已所用的，是可以随手增减改造的。还好，「webpack」的官方文档写得还行，我可以选择造一个更适合自己的，更简洁明了的，一步到位的。
 
@@ -10,19 +10,30 @@
 「Server-Side-Render」这个功能我也给做到里面去了。现在还是有许多的前端项目十分注重 'SEO'，如果我们还想继续使用现在流行的框架，就只能通过「服务端渲染」来满足 'SEO' 这个需求了。我选择做到一起的原因是，「客户端渲染」和「服务端渲染」在写法上差异性并不是很大，完全可以只写一套代码，慢慢决定采用「客户端渲染」还是「服务端渲染」。
 
 ### 使用
+#### 安装
 ```text
-
 cnpm i             // 首先需要安装依赖
-
-npm run dev        // 运行开发模式
-
-npm run ssr        // 运行SSR模式【包含 npm run build  和  npm run server 】
-
-// npm run build      // 打包生成静态文件
-// npm run server     // 打包生成静态文件
-
 ```
+#### 本地开发
+```
+npm run dev        // 运行开发模式
+```
+#### 本地SSR
+```
+// 打开三个命令窗口,依次执行
+npm run ssr-build    // 生成前端dist目录
+npm run ssr-server   // 生成SSR服务代码
+npm run ssr-start    // 启动SSR服务
 
+// 以上三个命令的合并
+npm run ssr        // 运行SSR模式【包含 npm run ssr-build   和  npm run ssr-server   和  npm run ssr-start 】
+```
+#### 本地SSR调试模式
+```
+// 本地SSR 开发模式【增加webpack --watch】 和 nodemon 启动SSR服务
+npm run ssr-server-debug    // 生成SSR服务代码 --watch 模式
+npm run ssr-start-debug     // nodemon 启动SSR服务
+```
 ### 目录结构
 '/server'
 这个文件下面都是跑在服务端的，因为其中包含 'react' 代码，所以会提前使用 'webpack' 打包后再运行。结构比较简单，可以很方便的拓展来支持更多的服务端需求。
