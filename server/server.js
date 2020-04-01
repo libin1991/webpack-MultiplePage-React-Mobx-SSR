@@ -35,7 +35,7 @@ app.use(compression());
 
 app.use('/js', express.static(path.join(__dirname, '../dist/js')));
 app.use('/css', express.static(path.join(__dirname, '../dist/css')));
-app.use('/images', express.static(path.join(__dirname, '../dist/images')));
+app.use('/images', express.static(path.join(__dirname, '../dist/images'), { maxage: '0.5h' }));
 app.use('/json', express.static(path.join(__dirname, '../dist/json')));
 
 app.get('*.html', async (req, res) => {
