@@ -42,6 +42,7 @@ app.get('*.html', async (req, res) => {
   let { url } = req;
   const start = Date.now();
 
+
   if (url == '/') url = '/index.html';
   const hit = microCache.get(url);
   if (hit) { // 判断是否存在缓存，有则返回缓存，无则默认实时编译返回
@@ -76,8 +77,8 @@ app.get('/', function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log(`施主，莫急，${port}号技师为您服务！！！`)
-  console.log(chalk.red.bold(`
+   console.log(chalk.red.bold(`
+      ==> 🌎  施主，莫急，${port}号技师为您服务！！！
       ==> 🌎  Listening on port ${port}. Open up http://localhost:${port}/ in your browser.\n`
   ));
 })
